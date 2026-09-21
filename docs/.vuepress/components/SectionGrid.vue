@@ -2,50 +2,38 @@
 const groups = [
   {
     number: '01',
-    name: 'Documentation',
-    desc: 'Start with the project overview and grow the documentation from here.',
+    name: 'Build the foundations',
+    desc: 'Modules 1–6 · Learn the arithmetic and cryptographic vocabulary from scratch.',
     color: '#2563eb',
     soft: '#dbeafe',
     items: [
-      {
-        number: '01',
-        title: 'Guide',
-        desc: 'Read the main project documentation, concepts, and reference material.',
-        link: '/guide/',
-        symbol: 'docs',
-      },
+      { number: '01–03', title: 'Fields and curves', desc: 'Statements, witnesses, finite fields, groups, and elliptic-curve arithmetic.', link: '/guide/#module-1-what-a-proving-system-does', symbol: '𝔽' },
+      { number: '04–05', title: 'Encryption and commitments', desc: 'ElGamal, homomorphic operations, Pedersen commitments, and hash assumptions.', link: '/guide/#module-4-elgamal-and-homomorphic-encryption', symbol: 'G' },
+      { number: '06', title: 'Interactive proofs', desc: 'Schnorr proofs, transcript challenges, and the Fiat–Shamir transformation.', link: '/guide/#module-6-interactive-proofs-and-fiat-shamir', symbol: '↔' },
     ],
   },
   {
     number: '02',
-    name: 'Visual explanations',
-    desc: 'Create precise diagrams that live alongside the written material.',
+    name: 'Understand the protocol',
+    desc: 'Modules 7–14 · Follow computation through constraints, polynomials, and verifier checks.',
     color: '#7c3aed',
     soft: '#ede9fe',
     items: [
-      {
-        number: '02',
-        title: 'Manim diagrams',
-        desc: 'Render reusable scenes with Manim and include them in documentation pages.',
-        link: '/guide/#manim-diagrams',
-        symbol: '▶',
-      },
+      { number: '07–09', title: 'Arithmetization', desc: 'Circuit equations, interpolation, evaluation domains, and quotient identities.', link: '/guide/#module-7-arithmetization', symbol: 'f(X)' },
+      { number: '10–11', title: 'Polynomial openings', desc: 'Commit to a polynomial and prove evaluations with inner-product arguments.', link: '/guide/#module-10-polynomial-commitments-and-openings', symbol: '⟨a,b⟩' },
+      { number: '12–14', title: 'PLONK and Halo2', desc: 'Gates, copy constraints, lookups, blinding, and the complete proof transcript.', link: '/guide/#module-12-plonk-gates-and-permutations', symbol: 'π' },
     ],
   },
   {
     number: '03',
-    name: 'Find anything',
-    desc: 'Navigate the documentation quickly with its full-text index.',
+    name: 'Build and explain a proof',
+    desc: 'Modules 15–18 · Implement circuits, test failures, and connect the theory to a working proof.',
     color: '#059669',
     soft: '#d1fae5',
     items: [
-      {
-        number: '03',
-        title: 'Search',
-        desc: 'Search page titles, headings, and content across the whole site.',
-        link: '/guide/#search',
-        symbol: '⌕',
-      },
+      { number: '15–16', title: 'Circuit engineering', desc: 'Learn the Rust API, bind public inputs, and discover missing constraints.', link: '/guide/#module-15-rust-and-the-halo2-circuit-api', symbol: '{ }' },
+      { number: '17', title: 'Private bounded value', desc: 'Prove a hidden value satisfies a public bound and matches a public commitment.', link: '/guide/#module-17-capstone-a-private-bounded-value', symbol: '✓', final: true },
+      { number: '18', title: 'Beyond the first proof', desc: 'Understand recursion, curve cycles, and the differences between IPA and KZG.', link: '/guide/#module-18-recursion-and-backend-comparisons', symbol: '∞' },
     ],
   },
 ]
@@ -56,17 +44,17 @@ const groups = [
     <section class="home-hero" aria-labelledby="home-title">
       <div class="hero-copy">
         <p class="kicker"><span class="kicker-dot"></span>halo2</p>
-        <h1 id="home-title">halo2 notes</h1>
+        <h1 id="home-title">Understand Halo2</h1>
         <p class="hero-text">
-          Build and explore the documentation one section at a time. Start with the
-          guide, create visual explanations with Manim, and find anything with search.
+          Start with finite fields and elliptic curves. Follow the mathematics into
+          polynomial commitments, PLONK, and a working Halo2 proof.
         </p>
         <div class="hero-actions">
           <a class="start-button" href="/guide/">
-            Open the guide
+            Explore the curriculum
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" /></svg>
           </a>
-          <span class="chapter-count"><strong>3</strong> sections</span>
+          <span class="chapter-count"><strong>18</strong> modules</span>
         </div>
       </div>
 
@@ -97,9 +85,9 @@ const groups = [
       <div class="curriculum-intro">
         <div>
           <p class="section-label">Contents</p>
-          <h2 id="curriculum-title">Sections</h2>
+          <h2 id="curriculum-title">Your learning path</h2>
         </div>
-        <p>Follow the guide, render a diagram, or jump directly to search.</p>
+        <p>120–150 hours, with practical exercises, review checkpoints, and explicit security assumptions.</p>
       </div>
 
       <div class="stages">
@@ -114,7 +102,7 @@ const groups = [
           </div>
 
           <header class="stage-head">
-            <p>{{ g.items.length }} {{ g.items.length === 1 ? 'page' : 'pages' }}</p>
+            <p>{{ g.items.length }} {{ g.items.length === 1 ? 'topic group' : 'topic groups' }}</p>
             <h3>{{ g.name }}</h3>
             <div class="stage-rule"></div>
             <p class="stage-desc">{{ g.desc }}</p>
@@ -129,7 +117,7 @@ const groups = [
               :href="s.link"
             >
               <div class="card-topline">
-                <span class="chapter-number">{{ 'Section ' + s.number }}</span>
+                <span class="chapter-number">{{ 'Module ' + s.number }}</span>
                 <span class="chapter-symbol">{{ s.symbol }}</span>
               </div>
               <h4>{{ s.title }}</h4>

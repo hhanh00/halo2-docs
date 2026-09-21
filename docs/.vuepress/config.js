@@ -7,7 +7,7 @@ import markdownItFootnote from 'markdown-it-footnote'
 export default {
   lang: 'en-US',
   title: 'halo2',
-  description: 'halo2 documentation',
+  description: 'A beginner curriculum for understanding and building Halo2 proofs',
   base: '/',
 
   bundler: viteBundler(),
@@ -15,7 +15,7 @@ export default {
   theme: defaultTheme({
     navbar: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
+      { text: 'Curriculum', link: '/guide/' },
     ],
     sidebar: {
       '/guide/': ['/guide/'],
