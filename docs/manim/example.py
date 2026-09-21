@@ -3,5 +3,5 @@ from manim import *
 
 class Example(Scene):
     def construct(self):
-        title = Text("Halo2")
+        title = Text("halo2")
         self.add(title)

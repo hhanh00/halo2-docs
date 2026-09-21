@@ -6,8 +6,8 @@ import markdownItFootnote from 'markdown-it-footnote'
 
 export default {
   lang: 'en-US',
-  title: 'Halo2',
-  description: 'Halo2 documentation',
+  title: 'halo2',
+  description: 'halo2 documentation',
   base: '/',
 
   bundler: viteBundler(),

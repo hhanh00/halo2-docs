@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroText: Halo2
+heroText: halo2
 tagline: Documentation
 actions:
   - text: Get started

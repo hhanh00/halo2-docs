@@ -55,8 +55,8 @@ const groups = [
   <div class="halo2-home">
     <section class="home-hero" aria-labelledby="home-title">
       <div class="hero-copy">
-        <p class="kicker"><span class="kicker-dot"></span>Halo2</p>
-        <h1 id="home-title">Halo2 notes</h1>
+        <p class="kicker"><span class="kicker-dot"></span>halo2</p>
+        <h1 id="home-title">halo2 notes</h1>
         <p class="hero-text">
           Build and explore the documentation one section at a time. Start with the
           guide, create visual explanations with Manim, and find anything with search.
