@@ -1,0 +1,10 @@
+node_modules/
+.pnpm-store/
+.manim-venv/
+
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
+docs/.vuepress/dist/
+
+__pycache__/
+*.pyc
